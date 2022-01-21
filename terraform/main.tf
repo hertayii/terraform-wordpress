@@ -11,10 +11,10 @@ module "ec2-instance" {
 }
 
 module "rds-instance" {
-  source        = "./rds"
-  vpc_id        = module.network.vpc_id
-  wordp_sg      = [module.ec2-instance.sg-wordpress]
-  private_sub   = module.network.priv_sub
+  source      = "./rds"
+  vpc_id      = module.network.vpc_id
+  wordp_sg    = [module.ec2-instance.sg-wordpress]
+  private_sub = module.network.priv_sub
 }
 
 # output "vpc_id_id" {
