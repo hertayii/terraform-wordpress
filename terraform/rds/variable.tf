@@ -31,12 +31,12 @@ variable "vpc_id" {
 }
 
 variable "wordp_sg" {
-    type = list
+  type = list(any)
 }
 # variable "private_sub"{
 #     type = string
 # }
 
-variable "private_sub"{
-    # type = string
+variable "private_sub" {
+  # type = string
 }

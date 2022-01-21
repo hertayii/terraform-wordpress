@@ -8,7 +8,7 @@ resource "aws_instance" "wordpress" {
   security_groups = [aws_security_group.wordpress.id]
   key_name        = var.key_name
   tags = {
-      Name = var.name
+    Name = var.name
   }
 }
 

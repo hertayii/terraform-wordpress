@@ -2,10 +2,6 @@ variable "region" {
   description = "EC2-region"
   default     = "us-east-1"
 }
-# variable "availability_zones" {
-#         description = "AZ for wordpress subnets"
-#         default = "us-east-1a"
-# }
 
 variable "name" {
   type = string

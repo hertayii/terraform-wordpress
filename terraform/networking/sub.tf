@@ -1,10 +1,10 @@
 data "aws_availability_zones" "available" {}
 
-/* Public subnet */
+/* Subnets */
 resource "aws_subnet" "public_subnet_cidr" {
   vpc_id                  = aws_vpc.wordpress.id
-  count                   = 3                                        #"${length(var.public_subnets_cidr)}"
-  cidr_block              = cidrsubnet(var.vpc_cidr, 8, count.index) #"${var.public_subnets_cidr[count.index]}"
+  count                   = 3                                        
+  cidr_block              = cidrsubnet(var.vpc_cidr, 8, count.index) 
   availability_zone       = data.aws_availability_zones.available.names[count.index]
   map_public_ip_on_launch = true
   depends_on              = [aws_vpc.wordpress]
@@ -14,8 +14,8 @@ resource "aws_subnet" "public_subnet_cidr" {
 }
 resource "aws_subnet" "private_subnet_cidr" {
   vpc_id                  = aws_vpc.wordpress.id
-  count                   = 3                                             #"${length(var.private_subnets_cidr)}"
-  cidr_block              = cidrsubnet(var.vpc_cidr, 8, count.index + 10) #"${var.private_subnets_cidr[count.index]}"
+  count                   = 3                                             
+  cidr_block              = cidrsubnet(var.vpc_cidr, 8, count.index + 10)
   availability_zone       = data.aws_availability_zones.available.names[count.index]
   map_public_ip_on_launch = false
   depends_on              = [aws_vpc.wordpress]
