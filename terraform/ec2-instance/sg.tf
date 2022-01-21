@@ -1,8 +1,8 @@
 resource "aws_security_group" "wordpress" {
-  name        = "${var.name}-sg"
-  description = "Default security group to allow inbound/outbound from the VPC"
+  name          = "${var.name}-sg"
+  description   = "Default security group to allow inbound/outbound from the VPC"
   #   vpc_id      = "${aws_vpc.wordpress.id}"
-  vpc_id = var.vpc_id
+  vpc_id        = var.vpc_id
   ingress {
     from_port   = var.http
     to_port     = var.http
