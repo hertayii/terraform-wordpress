@@ -16,17 +16,3 @@ module "rds-instance" {
   wordp_sg    = [module.ec2-instance.sg-wordpress]
   private_sub = module.network.priv_sub
 }
-
-# output "vpc_id_id" {
-#   value = module.network.vpc_id
-# }
-
-# output "id" {
-#   value = module.network.pub_sub
-# }
-# output "priv_s" {
-#   value = module.network.priv_sub
-# }
-# output "sg-word" {
-#   value = module.ec2-instance.sg-wordpress
-# }
