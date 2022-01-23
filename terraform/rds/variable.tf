@@ -18,13 +18,13 @@ variable "db_user" {
   description = "Database administrator username"
   default     = "admin"
   type        = string
-  sensitive   = true
+  sensitive   = false
 }
 variable "db_pass" {
   description = "Database administrator password"
   default     = "adminadmin"
   type        = string
-  sensitive   = true
+  sensitive   = false
 }
 variable "vpc_id" {
   type = string
