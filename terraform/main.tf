@@ -10,9 +10,18 @@ module "ec2-instance" {
   subnet_ids = module.network.pub_sub
 }
 
+
 module "rds-instance" {
   source      = "./rds"
   vpc_id      = module.network.vpc_id
   wordp_sg    = [module.ec2-instance.sg-wordpress]
   private_sub = module.network.priv_sub
+}
+
+
+output "vpc_id" {
+  value       = module.network.vpc_id
+  sensitive   = false
+  description = "description"
+  depends_on  = []
 }

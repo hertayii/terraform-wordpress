@@ -4,7 +4,6 @@ resource "aws_security_group" "rds" {
   vpc_id      = var.vpc_id
 
   ingress {
-    # description     = "TLS from VPC"
     from_port       = 3306
     to_port         = 3306
     protocol        = "tcp"
