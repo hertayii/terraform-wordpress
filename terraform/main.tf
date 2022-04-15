@@ -1,3 +1,12 @@
+terraform {
+  backend "s3" {
+    bucket = "terraform.state.for.me"
+    key    = "./terraform.state"
+    region = "us-east-1"
+  }
+}
+
+
 module "network" {
   source = "./networking"
   name   = "wordpress"
